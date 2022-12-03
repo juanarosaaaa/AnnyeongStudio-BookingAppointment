@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        .body{
+        font-family: 'Poppins', sans-serif;
+        background: #FFF8EA;
+      }
+    </style>
+</head>
+<body>
+        <section id="booking">
+            <div class="container">
+                <img src="/asset/annyeonglogo.png" style="width: 180px; height: 100px; margin-top: 30px; padding-left: 10px;">
+            </div>
+        </section>
+        <br>
+        <br>
+        <input type="text" name="datetime" id="datetime" placeholder="Choose a Date and Time" style="margin: 10px;"/>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+        flatpickr("#datetime", {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+        });
+        </script>
+    <section class="form" style="position:relative;top:-160px;right:-606px;">
+        <div class="signUp">
+            <h2 class="book" style="color: #ff8376;text-align:left;font-family: 'Poppins', sans-serif;font-weight: bolder; margin-top: 10px;">Booking Appointment</h2>
+                <form action="/action_page.php">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label" style="font-family: 'Poppins', sans-serif; margin-top: 2px;">Name</label>
+                        <br>
+                        <input type="text" class="form-control" id="Input1" style="background: none;
+                        border: 0; border-bottom: 1px solid #292828;">
+                      </div>
+                      <br>
+                      <div class="mb-3">
+                        <label for="Input2" class="form-label" style="font-family: 'Poppins', sans-serif; margin-top: 2px;">Email:</label>
+                        <br>
+                        <input type="text" class="form-control" id="Input2" style="background: none;
+                        border: 0; border-bottom: 1px solid #292828;">
+                      </div>
+                      <br>
+                      <div class="mb-3">
+                        <label for="Input3" class="form-label" style="font-family: 'Poppins', sans-serif; margin-top: 2px;">Phone Number:</label>
+                        <br>
+                        <input type="text" class="form-control" id="Input3" style="background: none;
+                        border: 0; border-bottom: 1px solid #292828;">
+                      </div>
+                </form>
+        </div>
+    </section>
+    <section class="backDrop" style="position:relative;top:-100px;right:-606px;">
+        <div class="color">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h4 class="card-title" style= "font-family: 'Poppins', sans-serif;" >Choose the color of your backdrop</h4>
+                      <h5 class="card-title"  style= "font-family: 'Poppins', sans-serif;">pickle green</h5>
+                      <input type="checkbox" style="position:relative; top: -10px; left:265px;"> <img src="pickleGreen.jpg" class="card-img-top" style="width: 18rem;">
+                      </div>
+                    </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title"  style= "font-family: 'Poppins', sans-serif;">cocoa brown</h5>
+                        </div>
+                        <input type="checkbox" style="position:relative; top: -10px; left:265px;"><img src="cocoaBrown.jpg" class="card-img-top" style="width: 18rem;">
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title"  style= "font-family: 'Poppins', sans-serif;">passion red</h5>
+                          <input type="checkbox" style="position:relative; top: -10px; left:265px;"><img src="passionRed.jpg" class="card-img-top" style="width: 18rem;">
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title"  style= "font-family: 'Poppins', sans-serif;">denim blue</h5>
+                        </div>
+                        <input type="checkbox" style="position:relative; top: -10px; left:265px;"><img src="denimBlue.jpg" class="card-img-top" style="width: 18rem;">
+                      </div>
+                <br>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
