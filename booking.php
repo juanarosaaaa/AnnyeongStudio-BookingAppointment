@@ -1,10 +1,14 @@
+<?php 
+  include("dbcon.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Annyeong Studio | Booking Appointment</title>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -45,14 +49,25 @@
       <img src="asset\annyeonglogo.png" style="width: 180px; height: 100px; margin-top: 10px;">
     </div>
   </section>
-
+  <form method="POST" action="dbcon.php">
   <section class="form">
     <div class="container">
       <div class="row mt-4">
         <div class="col">
+          <?php
+            session_start();
+            if(isset($_SESSION['message'])){
+              ?>
+              <script>
+                alert("<?php echo $_SESSION['message']; ?>");
+              </script>
+              <?php 
+              unset($_SESSION['message']);
+            }
+          ?>
           <div class="signUp">
             <h2 class="book" style="color: #ff8376;text-align:left;font-weight: 600; margin-top: 10px;font-family: 'Poppins', sans-serif;">Booking Appointment</h2>
-              <form>
+              
                 <div class="form-group w-50">
                   <label for="Input1" class="form-label" style="margin-top: 2px;">Name</label>
                   <input type="text" class="form-control input-normal" id="InputName" placeholder="Name" name="name" style="border: none; border-bottom: 1px solid; width: 30rem;">
@@ -63,9 +78,9 @@
                 </div>
                 <div class="form-group w-50">
                   <label for="Input3" class="form-label" style="margin-top: 2px;">Phone Number</label>
-                  <input type="text" class="form-control input-normal" id="InputPhone" placeholder="Phone Number" name="contact" style="border: none; border-bottom: 1px solid; width: 30rem;">
+                  <input type="text" class="form-control input-normal" id="InputPhone" placeholder="Phone Number" name="phone" style="border: none; border-bottom: 1px solid; width: 30rem;">
                 </div>
-              </form>
+              
           </div>
         </div>
         <div class="col">
@@ -97,8 +112,8 @@
                 <div class="card">
                   <div class="card-content">
                     <div class="card-body">
-                      <input type="checkbox" class="checkbox" name="jeju" id="jejupackage"> 
                       <div class="media d-flex">
+                      <input type="radio" class="checkbox" name="package[]" value="Jeju Package" id="jejupackage"> 
                           <div class="card-body">
                             <h6 class="card-title pinkk" style="font-size: 16px;"><b>jeju package</b></h6>
                             <h6 class="card-subtitle mb-2 pinkk" style="font-family: 'Poppins', sans-serif;">(basic)</h6>
@@ -124,8 +139,8 @@
               <div class="card">
                 <div class="card-content">
                   <div class="card-body">
-                    <input type="checkbox" class="checkbox" name="seoul" id="seoulpackage"> 
                     <div class="media d-flex">
+                    <input type="radio" class="checkbox" name="package[]" value="Seoul Package" id="seoulpackage">
                       <div class="card-body">
                         <h6 class="card-title pinkk" style="font-size: 16px;"><b>seoul package</b></h6>
                         <h6 class="card-subtitle mb-2 pinkk" style="font-family: 'Poppins', sans-serif;">(premium)</h6>
@@ -151,7 +166,7 @@
           </section>
         </div>
         <div class="col">
-          <section class="backDrop" style="position:relative;left: 20px;">
+          <section class="backDrops" style="position:relative;left: 20px;">
             <div class="container-fluid">
               <div class="row">
                 <div class="mt-3 mb-1">
@@ -165,7 +180,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="pickleGreen" name="pickleGreen" >
+                              <input type="checkbox" id="pickleGreen" name="backdrop[]" value="Pickle Green" >
                               <h6 class="card-title" style="color: #3d3d3d;"><b>pickle green</b></h6>
                               <img src="asset\pickleGreen.png" class="card-img-top" >
                           </div>
@@ -180,7 +195,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="passionRed" name="passionRed"> 
+                              <input type="checkbox" id="passionRed" name="backdrop[]" value="Passion Red"> 
                               <h6 class="card-title" style="color: #3d3d3d;"><b>passion red</b></h6>
                               <img src="asset\passionRed.jpg" class="card-img-top">
                           </div>
@@ -197,7 +212,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="cocoaBrown" name="cocoaBrown"> 
+                              <input type="checkbox" id="cocoaBrown" name="backdrop[]" value="Cocoa Brown"> 
                               <h6 class="card-title" style="color: #3d3d3d;"><b>cocoa brown</b></h6>
                               <img src="asset\cocoaBrown.jpg" class="card-img-top" >
                           </div>
@@ -212,7 +227,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="denimBlue" name="denimBlue"> 
+                              <input type="checkbox" id="denimBlue" name="backdrop[]" value="Denim Blue"> 
                               <h6 class="card-title" style="color: #3d3d3d;"><b>denim blue</b></h6>
                               <img src="asset\denimBlue.jpg" class="card-img-top">
                           </div>
@@ -237,7 +252,7 @@
             <div class="col">
               <div class="card" style="width: 300px;">
                 <div class="mt-1">
-                  <input type="checkbox" name="addPax" style="position:relative;left:250px;"> 
+                  <input type="checkbox" name="addOns[]" value="Additional Pax" style="position:relative;left:250px;"> 
                 </div>
                 <div class="card-body">
                   <p class="card-text">Additional pax(below 3 y/o is free) <br> ₱250.00 </p>
@@ -247,7 +262,7 @@
             <div class="col">
               <div class="card" style="width: 300px;">
                 <div class="mt-1">
-                  <input type="checkbox" name="softCopy" style="position:relative;left:250px;"> 
+                  <input type="checkbox" name="addOns[]" value="Soft Copy(Raw Digital Files)" style="position:relative;left:250px;"> 
                 </div>
                 <div class="card-body">
                   <p class="card-text">Soft Copy(Raw Digital Files)<br> ₱300.00</p>
@@ -257,7 +272,7 @@
             <div class="col">
               <div class="card" style="width: 300px;">
                 <div class="mt-1">
-                  <input type="checkbox" name="addPrint" style="position:relative;left:250px;"> 
+                  <input type="checkbox" name="addOns[]" value="Additional Prints" style="position:relative;left:250px;"> 
                 </div>
                 <div class="card-body">
                   <p class="card-text">Additional Prints <br> ₱70.00</p>
@@ -269,7 +284,7 @@
             <div class="col">
               <div class="card" style="width: 300px;">
                 <div class="mt-1">
-                  <input type="checkbox" name="addBack" style="position:relative;left:250px;"> 
+                  <input type="checkbox" name="addOns[]" value="Additional Backdrop" style="position:relative;left:250px;"> 
                 </div>
                 <div class="card-body" >
                   <p class="card-text">Additional Backdrop<br> ₱100.00</p>
@@ -280,7 +295,7 @@
             <div class="col">
               <div class="card" style="width: 300px;">
                 <div class="mt-1">
-                  <input type="checkbox" name="extraPet" style="position:relative;left:250px;"> 
+                  <input type="checkbox" name="addOns[]" value="Extra Pet" style="position:relative;left:250px;"> 
                 </div>
                 <div class="card-body">
                   <p class="card-text">Extra Pet (first is free)<br> ₱100.00</p>
@@ -290,10 +305,8 @@
           </div>
         </div>
       </section>
-
     </div>
   </section>
-
   <section class="payment ml-5">
     <div class="container-fluid">
       <section id="acc">
@@ -321,7 +334,6 @@
             <div class="row">
               <div class="col mt-3 mb-1">
                 <h4 class="header">Please upload the receipt/proof of transaction here</h4>
-                <form class="mt-1">
                   <div class="form-group">
                     <div class="input-group mb-3 w-50">
                       <div class="custom-file">
@@ -330,13 +342,11 @@
                       </div>
                     </div>
                   </div>
-                </form>
               </div>
             </div>
             <div class="row">
               <div class="col mt-3 mb-1">
                 <h4 class="header">Coupon</h4>
-                <form class="mt-1">
                   <div class="row">
                     <div class="col-7">
                       <input  type="text" class="form-control input-normal" name="coupon" placeholder="Enter coupon" style="border: none; border-bottom: 1px solid; width: 400px;">
@@ -345,7 +355,6 @@
                       <button type="button" class="btn ml-4" name="apply" style="border-radius: 10px; font-weight: bold; width: 100px;background-color: #FF8376 !important;">Apply</button>
                     </div>
                   </div>
-                </form>
               </div>
             </div>
           </div>
@@ -355,12 +364,14 @@
   
   <section class="appButt mt-5 mb-3" style="text-align: center;">
     <div>
-      <button type="button" class="btn btn-lg btn-primary" name="scheduleAppointment" style="border-radius: 30px; border-color: #fff; font-weight: bold; width: 550px; background-color: #99edba !important; color: #3D3D3D;">Schedule Appointment</button>
+      <button type="submit" class="btn btn-lg btn-primary" name="scheduleAppointment" style="border-radius: 30px; border-color: #fff; font-weight: bold; width: 550px; background-color: #99edba !important; color: #3D3D3D;">Schedule Appointment</button>
+
     </div>
     <div class="mt-1">
       <p style="font-style:italic; font-size: 20px; font-weight: 275;">As part of our sanitation policy against Covid, we recommend arriving at our studio 5 minutes before <br>your appointment to avoid overcrowding.</p>
     </div>
   </section>
+</form>
 
   <section id="policy">
     <div class="container">
@@ -421,6 +432,26 @@
       </div>
     </div>
   </section>
+
+  <section>
+  <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Booking Appointment Information</h5>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>You'll receive a confirmation email for the appointment.</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
     
           <!-- JavaScript Bundle with Popper -->
           <!-- JavaScript Bundle with Popper -->
@@ -428,5 +459,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>       
+
+</script>";
 </body>
 </html>
