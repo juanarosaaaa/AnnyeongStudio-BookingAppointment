@@ -1,28 +1,39 @@
 <?php
 
-$to = "jhannprose@gmail.com";
-$subject = "Booking Appointment Confirmation";
+require 'vendor\autoload.php';
+// Import the PHPMailer class
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
-// In php 7.2 and newer versions we can use an array to set the headers.
-$headers = array(
-    'MIME-Version' => '1.0',
-    'Content-type' => 'text/html;charset=UTF-8',
-    'From' => 'noreply@test.com.com',
-    'Reply-To' => 'noreply@test.com',
-);
+// Create a new PHPMailer instance
+$mail = new PHPMailer();
 
-// Starting output buffer.
-ob_start();
-include("mailScript.php");
-$message = ob_get_contents();
-ob_end_clean();
+// Specify the SMTP server and credentials
+$mail->isSMTP();
+$mail->Host = 'smtp.smtp2go.com';
+$mail->Port = 2525;
+$mail->SMTPAuth = true;
+$mail->Username = 'annyeongstudio';
+$mail->Password = 'annyeongstudio';
 
-$sent = mail($to, $subject, $message, $headers);
+if (isset($_POST['scheduleAppointment'])) {
+    // Set the sender and recipient addresses
+    $mail->setFrom('jhannprose@gmail.com', 'Annyeong Studio');
+    $mail->addAddress('jannroset@gmail.com', 'Jann Rose');
 
-if(!$sent){
-    echo "Error: Message not sent. Please try again";
-}else{
-    echo "Message was sent successfully";
+    // Set the subject and body of the email
+    $mail->Subject = 'Test Email';
+    $mail->Body = 'This is a test email sent using SMTP2GO in PHP.';
+
+    // Send the email
+    if ($mail->send()) {
+        echo 'Email sent successfully!';
+    } else {
+        echo 'Error: '.$mail->ErrorInfo;
+    }
 }
+
+
+
     
 ?>

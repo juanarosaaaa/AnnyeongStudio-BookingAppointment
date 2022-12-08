@@ -11,6 +11,7 @@
     <title>Annyeong Studio | Booking Appointment</title>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
     <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
@@ -40,6 +41,10 @@
       }
       .card-subtitle{
         font-family: 'Poppins', sans-serif;
+      }
+      .card1.selected {
+        background-color: #eee;
+        box-shadow: 0 0 0 2px #333;
       }
     </style>
 </head>
@@ -84,10 +89,12 @@
           </div>
         </div>
         <div class="col">
-          <input type="text" name="datetime" id="datetime" placeholder="Choose a Date and Time" style="margin-left: 65px;"/>
+          <input type="text" name="datetime" id="datetime" placeholder="Select date and time..."/>
           <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
           <script>
             flatpickr("#datetime", {
+                inline:true,
+                theme:"airbnb",
                 enableTime: true,
                 dateFormat: "Y-m-d H:i",
             });
@@ -109,11 +116,11 @@
             </div>
             <div class="row">
               <div class="col">
-                <div class="card">
+                <div class="card card1">
                   <div class="card-content">
                     <div class="card-body">
                       <div class="media d-flex">
-                      <input type="radio" class="checkbox" name="package[]" value="Jeju Package" id="jejupackage"> 
+                        <input type="radio" class="radio" id="radio1" name="package[]" value="Jeju Package" id="jejupackage"> 
                           <div class="card-body">
                             <h6 class="card-title pinkk" style="font-size: 16px;"><b>jeju package</b></h6>
                             <h6 class="card-subtitle mb-2 pinkk" style="font-family: 'Poppins', sans-serif;">(basic)</h6>
@@ -136,11 +143,11 @@
                 </div>
               </div>
             <div class="col"> 
-              <div class="card">
+              <div class="card card1">
                 <div class="card-content">
                   <div class="card-body">
                     <div class="media d-flex">
-                    <input type="radio" class="checkbox" name="package[]" value="Seoul Package" id="seoulpackage">
+                    <input type="radio" class="radio" id="radio2" name="package[]" value="Seoul Package" id="seoulpackage">
                       <div class="card-body">
                         <h6 class="card-title pinkk" style="font-size: 16px;"><b>seoul package</b></h6>
                         <h6 class="card-subtitle mb-2 pinkk" style="font-family: 'Poppins', sans-serif;">(premium)</h6>
@@ -180,7 +187,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="pickleGreen" name="backdrop[]" value="Pickle Green" >
+                              <input type="checkbox" id="checkb" name="backdrop[]" value="Pickle Green" >
                               <h6 class="card-title" style="color: #3d3d3d;"><b>pickle green</b></h6>
                               <img src="asset\pickleGreen.png" class="card-img-top" >
                           </div>
@@ -195,7 +202,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="passionRed" name="backdrop[]" value="Passion Red"> 
+                              <input type="checkbox" id="checkb" name="backdrop[]" value="Passion Red"> 
                               <h6 class="card-title" style="color: #3d3d3d;"><b>passion red</b></h6>
                               <img src="asset\passionRed.jpg" class="card-img-top">
                           </div>
@@ -212,7 +219,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="cocoaBrown" name="backdrop[]" value="Cocoa Brown"> 
+                              <input type="checkbox" id="checkb" name="backdrop[]" value="Cocoa Brown"> 
                               <h6 class="card-title" style="color: #3d3d3d;"><b>cocoa brown</b></h6>
                               <img src="asset\cocoaBrown.jpg" class="card-img-top" >
                           </div>
@@ -227,7 +234,7 @@
                       <div class="card-body">
                         <div class="media d-flex">
                             <div class="card-body">
-                              <input type="checkbox" id="denimBlue" name="backdrop[]" value="Denim Blue"> 
+                              <input type="checkbox" id="checkb" name="backdrop[]" value="Denim Blue"> 
                               <h6 class="card-title" style="color: #3d3d3d;"><b>denim blue</b></h6>
                               <img src="asset\denimBlue.jpg" class="card-img-top">
                           </div>
@@ -337,8 +344,23 @@
                   <div class="form-group">
                     <div class="input-group mb-3 w-50">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="receipt">
+                        <input type="file" class="custom-file-input" id="image-input" name="receipt">
                         <label class="custom-file-label">Upload receipt</label>
+
+                        <?php 
+                        if (isset($_POST['scheduleAppointment'])) {
+                          $filename = $_FILES["receipt"]["name"];
+                          $tempname = $_FILES["receipt"]["tmp_name"];
+                          $folder = ".../uploads/" . $filename;
+
+                          if (move_uploaded_file($tempname, $folder)) {
+                            echo 'Image uploaded successfully!';
+                        } else {
+                            echo 'Failed to upload image!';
+                        }
+                        }
+                        
+                        ?>
                       </div>
                     </div>
                   </div>
@@ -452,6 +474,46 @@
   </div>
 </div>
   </section>
+
+
+  <script>
+    var bckdrp = document.querySelectorAll('#checkb');
+    var jeju = document.querySelector('#radio1');
+    var seoul = document.querySelector('#radio2');
+
+    seoul.addEventListener('change', function(e) {
+      // Count the number of selected checkboxes
+      var count = 0;
+      for (var i = 0; i < bckdrp.length; i++) {
+        if (bckdrp[i].checked) {
+          count++;
+        }
+      }
+
+      // If the number of selected checkboxes is not within the limit for radio1,
+      // prevent the radio button from being checked
+      if (count > 3 || count < 1) {
+        e.preventDefault();
+      }
+    });
+
+    jeju.addEventListener('change', function(e) {
+      // Count the number of selected checkboxes
+      var count = 0;
+      for (var i = 0; i < bckdrp.length; i++) {
+        if (bckdrp[i].checked) {
+          count++;
+        }
+      }
+
+      // If the number of selected checkboxes is not within the limit for radio2,
+      // prevent the radio button from being checked
+      if (count != 1) {
+        e.preventDefault();
+      }
+    });
+  </script>
+  
     
           <!-- JavaScript Bundle with Popper -->
           <!-- JavaScript Bundle with Popper -->

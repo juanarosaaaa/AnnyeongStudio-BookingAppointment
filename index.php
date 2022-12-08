@@ -6,76 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Annyeong Studio | Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
         <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
         <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
         <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
         <style>
-      .body{
-        font-family: 'Poppins', sans-serif;
-      }
-      .bg-home{
-        background-image: url('img\home-studio.jpg');
-        
-      }
-      .page-title{
-        font-size: 40px;
-        margin-top: 50px;
-        text-align: justify;
-        font-weight: bolder;
-      }
-      .carousel-inner{
-          max-width: 40%;
-          max-height: 40%;
-          object-fit: fill;
-      }
-      .pastel-green{
-          color:#99edba;
-      }
-      .pinkk{
+        .body{
+          font-family: 'Poppins', sans-serif;
+        }
+        .bg-home{
+          background-image: url('img\home-studio.jpg');
+          
+        }
+        .page-title{
+          font-family: 'Poppins', sans-serif;
+          font-size: 40px;
+          margin-top: 50px;
+          text-align: justify;
+          font-weight: bolder;
+        }
+        .carousel-inner{
+            max-width: 40%;
+            max-height: 40%;
+            object-fit: fill;
+        }
+        .pastel-green{
+            color:#99edba;
+        }
+        .pinkk{
+            color: #FF8376;
+        }
+        .dark-gray{
+          color: #3D3D3D;
+        }
+        .annyeongMap{
+          float:right;
+          width:500px;
+          height:500px;
+        }
+        .accordion{
+          font-family: 'Poppins', sans-serif;
+        }
+        .label-title{
+          font-family: 'Poppins', sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 34px;
+        }
+        .accordion-button{
           color: #FF8376;
-      }
-      .dark-gray{
-        color: #3D3D3D;
-      }
-      .annyeongMap{
-        float:right;
-        width:500px;
-        height:500px;
-      }
-      .accordion{
-        font-family: 'Poppins', sans-serif;
-      }
-      .label-title{
-        font-weight: 400;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 34px;
-      }
-      .accordion-button{
-        color: #FF8376;
-      }
-      .accordion-button .collapsed{
-        background:#ff8376;
-      }
-      .accordion-collapse .collapsed .show{
-        color:#ff8376;
-      }
-      .sched{
-        font-size:20px;
-      }
-      .items{
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 48px;
-      }
+        }
+        .accordion-button .collapsed{
+          background:#ff8376;
+        }
+        .accordion-collapse .collapsed .show{
+          color:#ff8376;
+        }
+        .sched{
+          font-family: 'Poppins', sans-serif;
+          font-size:20px;
+        }
+        .items{
+          font-family: 'Poppins', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 48px;
+        }
     </style>
 </head>
 <body style="background-color: #fffcf6;">
@@ -104,14 +106,14 @@
         <div class="row">
           <div class="col qoute mt-4">
             <div>
-              <h2 class="pinkk" style="font-style: italic;font-weight: 300;font-size: 23px; line-height: 34px;">the first <span class="pastel-green">self-photo studio </span>in Lipa City</h2>
+              <h2 class="pinkk" style="font-style: italic;font-weight: 300;font-size: 23px; line-height: 34px; font-family: 'Poppins', sans-serif;">the first <span class="pastel-green">self-photo studio </span>in Lipa City</h2>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <a href="booking.php">
-              <button class="btn-lg " style="border: none; background-color:#99edba;">Book Now!</button>
+              <button class="btn-lg " style="border: none; background-color:#99edba;font-family: 'Poppins', sans-serif;">Book Now!</button>
             </a>
           </div>
         </div>
@@ -160,7 +162,7 @@
         </div>
         <div class="qoute mt-md-5">
           <div>
-            <h2 class="dark-gray">simply, it's <span class="pinkk">just you </span>and<span class="pastel-green"> the camera.</span></h2>
+            <h2 class="dark-gray" style="font-family: 'Poppins', sans-serif;">simply, it's <span class="pinkk">just you </span>and<span class="pastel-green"> the camera.</span></h2>
           </div>
         </div>
       </center>
@@ -309,21 +311,25 @@
       <div class="social-media">
         <div class="row justify-content-sm-center">
           <div class="col-md-auto">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
+            <!--<a
+              class="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i>
+            </a>-->
+            <a href="" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Facebook</h6></a>
+            
           </div>
           <div class="col-md-auto">
-            <h6>icon</h6>
+            <a href="" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Instagram</h6></a>
+            
           </div>
           <div class="col-md-auto">
-            <h6>icon</h6>
+            <a href="" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Email</h6></a>
+            
           </div>
         </div>
         <div class="inquire text-center pinkk">
-          <h5 style="font-style: normal; font-weight: 400; font-size: 24px; text-align: center;">For inquiries/collaborations, email us at:</h5>
+          <h5 style="font-style: normal; font-weight: 400; font-size: 24px; text-align: center;font-family: 'Poppins', sans-serif;">For inquiries/collaborations, email us at:</h5>
           <a href="annyeongselfstudio@gmail.com">
-            <h6 class="pinkk" style="font-style: normal; font-weight: 400; font-size: 18px; line-height: 36px; text-align: center;">annyeongselfstudio@gmail.com</h6>
+            <h6 class="pinkk" style="font-style: normal; font-weight: 400; font-size: 18px; line-height: 36px; text-align: center;font-family: 'Poppins', sans-serif;">annyeongselfstudio@gmail.com</h6>
           </a>
         </div>
       </div>
