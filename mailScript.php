@@ -20,7 +20,7 @@ include ("dbcon.php");
         <h1 style="text-align:left; font-family: 'Poppins', sans-serif; margin: 30px;color: #3D3D3D; text-align:center;">Booking Appointment Confirmation</h1>
         </div>
         <div>
-            <p style="font-family: Helvetica, sans-serif; font-size:16px; text-align:justify; margin: 100px; margin-top: 20px; line-height: 1.8; color: #3D3D3D;">
+            <p style="font-family: 'Poppins', sans-serif; font-size:16px; text-align:justify; margin: 100px; margin-top: 20px; line-height: 1.8; color: #3D3D3D;">
                 Good news!
                 <br>
                 <br>
@@ -35,7 +35,7 @@ include ("dbcon.php");
             <br>
             <br>
             <br>
-            <h4 style="text-align: center;color: #FF8376;">Thank You <&sol;3 </h4>
+            <h4 style="text-align: center;color: #FF8376;font-family: 'Poppins', sans-serif;">Thank You <&sol;3 </h4>
             <br>
         </div>
     </body>
