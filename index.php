@@ -82,14 +82,14 @@
 </head>
 <body style="background-color: #fffcf6;">
   <section id="navbar">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="col-12 col-md-8">
         <a class="navbar-brand" href="#">
           <img src="asset\annyeonglogo.png" class="img-fluid mx-3" style="width: 100px; height: 50px;" alt="Annyeong Studio">
         </a>
       </div>
       <div class="navbar-nav col-6 col-md-4 align-items-center">
-        <a class="nav-item nav-link active pinkk" href="#"><h6 class="items pinkk">Home</h6> <span class="sr-only"></span></a>
+        <a class="nav-item nav-link pinkk" href="#"><h6 class="items pinkk">Home</h6> <span class="sr-only"></span></a>
         <a class="nav-item nav-link pinkk" href="#portfolio"><h6 class="items pinkk">Portfolio</h6></a>
         <a class="nav-item nav-link pinkk" href="#aboutus"><h6 class="items pinkk">About us</h6></a>
         <a class="nav-item nav-link pinkk" href="#faq"><h6 class="items pinkk">FAQ</h6></a>
@@ -180,7 +180,7 @@
       </h3>
       <div class="row">
         <div class="col" style="position: absolute; width: 746px; height: 50px;">
-          <h3 class="hours pinkk mb-3" style="font-weight: 600; font-size: 24px;">Business Hours</h3>
+          <h3 class="hours pinkk mb-3 mt-3" style="font-weight: 600; font-size: 24px;font-family: 'Poppins', sans-serif;">Business Hours</h3>
           <p class="sched pastel-green">Monday, Tuesday, & Thursday <br>
             <span class="sched pinkk">10AM-7PM</span><br>
             <span class="sched pastel-green">Friday, Saturday, & Sunday</span><br>
@@ -190,7 +190,7 @@
           </p>
         </div>
         <div class="col">
-          <img class="annyeongMap img-fluid" src="asset\map.png">
+          <img class="annyeongMap img-fluid" style="margin-right: 100px;" src="asset\map.png">
         </div>
       </div>
     </div>
@@ -314,21 +314,21 @@
             <!--<a
               class="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i>
             </a>-->
-            <a href="" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Facebook</h6></a>
+            <a href="https://www.facebook.com/annyeongstudio.lipa" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Facebook</h6></a>
             
           </div>
           <div class="col-md-auto">
-            <a href="" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Instagram</h6></a>
+            <a href="https://instagram.com/annyeongselfphotostudio" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Instagram</h6></a>
             
           </div>
           <div class="col-md-auto">
-            <a href="" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Email</h6></a>
+            <a href="mailto:annyeongselfstudio@gmail.com" class="dark-gray"><h6 style="font-family: 'Poppins', sans-serif;">Email</h6></a>
             
           </div>
         </div>
         <div class="inquire text-center pinkk">
           <h5 style="font-style: normal; font-weight: 400; font-size: 24px; text-align: center;font-family: 'Poppins', sans-serif;">For inquiries/collaborations, email us at:</h5>
-          <a href="annyeongselfstudio@gmail.com">
+          <a href="mailto:annyeongselfstudio@gmail.com">
             <h6 class="pinkk" style="font-style: normal; font-weight: 400; font-size: 18px; line-height: 36px; text-align: center;font-family: 'Poppins', sans-serif;">annyeongselfstudio@gmail.com</h6>
           </a>
         </div>
